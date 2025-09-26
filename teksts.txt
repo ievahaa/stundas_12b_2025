@@ -1,0 +1,3 @@
+  Labrīt!  
+Šis ir piemērs.  
+Python ir nozīmīgs rīks.
