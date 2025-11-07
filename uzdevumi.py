@@ -22,3 +22,32 @@ skaitli = int(input("Cik skaitļus izdrukāt?"))
 skaititajs = Skaititajs()
 skaititajs.skaitli(skaitli)
 
+
+#Cilveks
+class Cilveks:
+    def __init__(self, vards, uzvards, vecums=0):
+        self.vards = vards
+        self.uzvards = uzvards
+        self.vecums = vecums
+
+    def info(self):
+        print("Vārds: ", self.vards)
+        print("Uzvārds:", self.uzvards)
+        print("Vecums:", self.vecums)
+
+cilveks = Cilveks("Jānis", "Bērziņš", 23)
+cilveks.info()
+
+class Skolens(Cilveks):
+    def __init__(self, vards, uzvards, klase, skola, vecums=0):
+        super().__init__(vards, uzvards, vecums)
+        self.klase = klase
+        self.skola = skola
+
+    def info_skolens(self):
+        print("Klase:", self.klase)
+        print("Skola:", self.skola)
+
+skolens = Skolens("Jānis", "Bērziņš", "5.a", "Salaspils 1. vidusskola", 11)
+skolens.info()
+skolens.info_skolens()
