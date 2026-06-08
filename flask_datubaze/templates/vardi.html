@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visi vārdi</title>
+</head>
+<body>
+    <h2>Ievadītie vārdi:</h2>
+
+    {% if names %}
+    <table>
+        <thead>
+            <tr>
+                <th>Vārds</th>
+                <th>Rediģēt</th>
+                <th>Dzēst</th>
+            </tr>
+        </thead>
+        {% for name in names %}
+        <tr>
+            <td>{{ name[1] }}</td>
+            <td><a href="/rediget/{{ name[0] }}">✏️</a></td>
+            <td><a href="/dzest/{{ name[0] }}" onclick="return confirm('Vai tiešām vēlies dzēst šo vārdu?')">🗑️</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% else %}
+    <p>Datubāzē vēl nav neviena vārda</p>
+    {% endif %}
+
+    <br>
+    <a href="/">Atpakaļ uz sākuma lapu</a>
+</body>
+</html>
